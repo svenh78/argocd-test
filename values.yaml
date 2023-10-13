@@ -1,0 +1,13 @@
+datadog:
+  targetSystem: "linux"
+  apiKey: <API_KEY>
+  appKey: <APP_KEY>
+  site: datadoghq.eu
+  kubelet:
+    tlsVerify: false
+clusterAgent:
+  replicas: 2
+  createPodDisruptionBudget: true
+  env:
+    - name: DD_ADMISSION_CONTROLLER_ADD_AKS_SELECTORS
+      value: true
